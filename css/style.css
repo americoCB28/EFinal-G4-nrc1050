@@ -1,0 +1,527 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,900&family=Shadows+Into+Light&display=swap');
+
+/* Declaración de variables */ 
+:root { 
+    /* Variables para la paleta de colores */
+    --color-naranjaclaro:#fd7e14;
+    --color-naranja:#e85d04;
+    --color-verdeclaro:#80b918;
+    --color-verdeoscuro: #245501;
+    --color-blanco:#ffff;
+    --color-negro: #000000;
+    --color-grisclaro: #F3F3F3;
+    --color-azuloscuro: #123d7d;
+
+
+    /* Variables para las fuentes de la página */
+    --fuente-principal: 'Poppins';
+    --fuente-titulos:'Poppins';
+    --fuente-subtitulos: 'Poppins';
+}
+
+* {
+    /* Elimina el margen y espaciado predeterminado de los elementos */
+    margin: 0;
+    padding: 0;
+
+    /* Establece que el "width/height" de un elemento será
+       el ancho/altura total, incluido el padding y border  */
+    box-sizing: border-box;
+}
+
+/* ------------------------------------
+    Selectores de estilos de tipo HTML
+    ----------------------------------- */
+html {
+    /* Suavizar el movimiento del scroll en la ventana del navegador */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal); /* Tipo de letra */
+}
+
+h1 {
+    font-size: 18px; /* Tamaño de la letra */
+    font-weight: 900; /* Grosor de la letra */
+}
+
+h2 {
+    font-size: 40px;
+    font-weight: 200;
+
+    padding-bottom: 5px;
+    margin-bottom: 30px;
+
+    text-align: center;
+
+    /* Caja padre */
+    position: relative;
+}
+
+h2::after {
+    /* Caja hijo */
+    content: "";
+
+    /* Barrita */
+    width: 100px; /* ancho */
+    height: 2px; /* grosor */
+    background-color: var(--color-azul);
+
+    position: absolute;
+    bottom: 0px;
+    /* left: 0px; */
+
+    left: calc(50% - 50px);
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 600;
+    padding-bottom: 5px;
+}
+
+p {
+    line-height: 1.5; /* Interlineado */
+    padding-bottom: 10px;
+}
+
+img {
+    /* Eliminar el margen inferior automático que se agrega en la imagen */
+    display: block; 
+}
+
+video {
+    /* Eliminar el margen inferior automático que se agrega al video */
+    display: block;
+}
+
+iframe {
+    display: block;
+}
+/* img { 
+border-radius: 152px 152px 152px 152px;
+-webkit-border-radius: 152px 152px 152px 152px;
+-moz-border-radius: 152px 152px 152px 152px;
+background: #e9f5e8;
+width: 5%;
+} */
+
+
+/* ------------------------------------
+    Selectores de estilos de tipo ID
+    ----------------------------------- */
+    #barra-superior {
+        background-color: var(--color-verdeclaro);
+        color: var(--color-blanco);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 0.8em;
+    }
+    
+    #barra-superior .fila {
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    #barra-superior span {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
+    #barra-superior a {
+        color: var(--color-blanco);
+        text-decoration: none;
+    }
+    
+    #barra-superior .bloque2 i {
+        font-size: 20px;
+    }
+    
+    #cabecera {
+    background-color: #f8f9fb; /* Color de fondo */
+    color: var(--color-azul); /* Color del texto */
+    padding-top: 0px;
+    padding-bottom: 0px;
+
+
+    /* Posicionamiento pegajoso */
+    position: sticky;
+
+    /* Coordenadas de ubicación */
+    top: 0px;
+
+    /* Colocar la caja de la cabecera encima de todas las demas */
+    z-index: 1000;
+    }
+
+    #cabecera a {
+        color: var(--color-verdeclaro);
+        font-size: 20px;
+    }
+
+    #cabecera a:hover {
+        color: var(--color-verdeoscuro)
+    } 
+
+    
+
+#portada {
+    background-image: url("../img/portada1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center right;
+    background-attachment: fixed;
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+#about{
+    text-align: center;
+    background-image: url(../imagenes/port1.png);
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+#nosotros{
+    text-align: center;
+    background-image: url(../imagenes/portadaChico.jpg);
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+#productos{
+    text-align: center;
+    background-image: url(../imagenes/logo/fondo1.jpg);
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+#productos h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 40px;
+    color: var(--color-azuloscuro);
+}
+
+#nosotros img {
+    padding-left: 700px;
+    height: 60px;
+}
+
+#nosotros h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 40px;
+    color: var(--color-azuloscuro);
+}
+#nosotros a {
+    text-decoration: none;
+    color: var(--color-verdeoscuro);
+}
+
+#nosotros a:hover {
+    color: var(--color-verdeclaro);
+} 
+
+#servicios {
+    background-color: var(--color-grisclaro);
+    text-align: center;
+}
+
+#servicios h3 {
+    font-family: var(--fuente-titulos);
+    color: var(--color-negro);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 23px;
+}
+
+#servicios img {
+    width: 90%;
+    padding-left: 38px;
+}
+#servicios p {
+    padding: 5px;
+    text-align: center;
+}
+
+#portafolio a {
+    color: var(--color-verdeclaro);
+    text-decoration: none;
+}
+
+#portafolio a:hover {
+    color: var(--color-verdeoscuro);
+    text-decoration: none;
+}
+#barra-nosotros{
+background-image: url("../imagenes/port2.png");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+background-attachment: fixed;
+color: var(--color-blanco);
+text-align: center;
+padding-top:150px;
+padding-bottom: 150px;
+}
+
+#barra-nosotros h1 {
+font-family: var(--fuente-titulos);
+font-size: 90px;
+}
+
+#barra-nosotros a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+
+#barra-nosotros a:hover {
+    color: var(--color-verdeclaro);
+    text-decoration: none;
+}
+
+#barra-servicios{
+    background-image: url("../imagenes/port2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-blanco);
+    text-align: center;
+    padding-top:150px;
+    padding-bottom: 150px;
+}
+    
+#barra-servicios h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 90px;
+}
+    
+#barra-servicios a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+    
+#barra-servicios a:hover {
+    color: var(--color-verdeclaro);
+    text-decoration: none;
+}
+
+#barra-portafolio{
+    background-image: url("../imagenes/portada2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-blanco);
+    text-align: center;
+    padding-top:150px;
+    padding-bottom: 150px;
+}
+        
+#barra-portafolio h1 {
+    font-family: var(--fuente-titulos);
+    font-size: 90px;
+}
+        
+#barra-portafolio a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+        
+#barra-portafolio a:hover {
+    color: var(--color-verdeclaro);
+    text-decoration: none;
+}
+
+#barra-contacto{
+    background-image: url("../imagenes/port2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-blanco);
+    text-align: center;
+    padding-top:150px;
+    padding-bottom: 150px;
+}
+            
+#barra-contacto h1 {
+    font-family: "Poppins";
+    font-size: 90px;
+}
+            
+#barra-contacto a {
+    text-decoration: none;
+    color: var(--color-blanco);
+}
+            
+#barra-contacto a:hover {
+    color: var(--color-verdeclaro);
+    text-decoration: none;
+}
+
+#pie {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+#pie h5 {
+    text-align: center;
+}
+
+
+
+/* ------------------------------------
+    Selectores de estilos de tipo CLASS
+    ----------------------------------- */
+    
+.espaciado {
+    /* Espacio entre el borde de la caja y su contenido */
+    padding-top: 90px;
+    padding-bottom: 90px;
+}
+
+.logo {
+    padding-right: 350px;
+}
+
+.contenedor {
+    max-width: 80%; /* Tamaño máximo con respecto a su caja padre */
+
+    /* Centrar el contenedor */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fila {
+    display: flex; /* Activa Flexbox */
+    flex-direction: row;  /* Los elementos hijos se colocaran uno al lado del otro (fila) */
+
+    /* Anular el padding izquierdo/derecho de la primera y última columna */
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.img_ajustarancho {
+    width: 100%; /* Ajusta el ancho de la imagen al ancho de su contenedor padre */
+    height: auto; /* Cambia proporcionalmente la altura de la imagen */
+}
+
+.columna {
+    flex-basis: 0px;  /* Reduce el mínimo el ancho del contenedor */
+    flex-grow: 1; /* Agranda el contenedor proporcionalmente */
+
+    /* Espaciado entre el borde de la columna y el contenido */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.columna:hover {
+    transform: scale(1.1) ;
+    -webkit-transform: scale(1.1) ;
+    -moz-transform: scale(1.1) ;
+    transition:all 0.8s ease;
+    -webkit-transition:all 0.8s ease;
+    -o-transition:all 0.8s ease;
+}
+
+.texto_enorme {
+    font-size: 50px;
+    font-weight: 200;
+    line-height: 1.5;
+    color: var(--color-blanco);
+    text-align: center;
+
+}
+
+.texto_resaltado {
+    color: var(--color-blanco);
+    font-weight: 900;
+    text-align: center;
+}
+.caja-overflow {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: var(--color-blanco);
+    overflow: hidden;
+}
+
+.titulo-port {
+    padding-top: 90px;
+    padding-bottom: 40px;
+}
+
+.titulo-port h2 {
+    color: var(--color-azuloscuro);
+    font-family: var(--fuente-titulos);
+    font-size: 40px;
+}
+
+.pie-logo{
+    padding-left: 590px;
+}
+
+.pie-barra{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.pie-opciones {
+    list-style-type: none;
+
+}
+
+.pie-opciones a {
+    color: var(--color-verdeclaro);
+    text-decoration: none;
+}
+
+.pie-opciones a:hover {
+    color: var(--color-verdeoscuro);
+    text-decoration: none;
+}
+
+.pie-items {
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    padding-left: 520px;
+
+}
+
+.pie-items li {
+    padding:10px 15px;
+    transition: all 0.5s ease-in-out;
+}
+
+.fondo {
+	width: 100%;
+	height: 500px;
+	background-image: url(../imagenes/contraloria.png);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.fondo2 {
+	width: 100%;
+	height: 500px;
+	background-image: url(../imagenes/fondo2.jpg);
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+footer {
+	width: 100%;
+	height: 50px;
+	background-color: #123d7d;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer p {
+	color: #F3F3F3;
+}

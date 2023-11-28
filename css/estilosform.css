@@ -1,0 +1,56 @@
+.form-group {
+    position: relative;
+}
+input{
+    margin: 20px 0;
+}
+.form-group label {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    background-color: white;
+    padding: 0 5px;
+    color: gray;
+    font-size: 12px;
+}
+
+.form-control-lg{
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    color: gray;
+    padding: 10px;
+}
+.form-group label{
+    color: grey;
+    font-weight: bold;
+}
+.form-control{
+    font-family: Roboto,sans-serif;
+    font-size: 14px;
+    color: gray;
+    padding: 10px;
+}
+label{
+    font-size: 14px;
+    color:gray;
+}
+.text-body{
+    font-size: 14px;
+}
+.forgot{
+    justify-items: baseline;
+}
+.text-lg-start{
+    text-align: center !important;
+}
+.success{
+    position: absolute;
+    font-size: 20px;
+    top: 100px;
+  
+}
+.error{
+    position: absolute;
+    font-size: 20px;
+    top: 100px;
+}
