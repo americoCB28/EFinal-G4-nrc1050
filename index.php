@@ -169,11 +169,8 @@
 
                     <h3>¿Porque reportar<br> <!-- &amp; --> con nosotros?</h3>
                     <hr>
-                    <p>Disfruta de la naturaleza en su mejor expresión con nuestras frutas orgánicas cuidadosamente
-                        seleccionadas. Desde manzanas crujientes hasta jugosas naranjas, nuestras frutas están llenas de
-                        sabor y nutrientes, perfectas para un snack saludable o para complementar tus recetas
-                        favoritas.</p>
-                    <a href="reportar.php" class="btn btn-light btn-xl js-scroll-trigger" style="background-color: #FF0000; color: white;" > QUIERO REPORTAR <span class="glyphicon glyphicon-triangle-right"></span></a>
+                    <p>Reportar casos de corrupción en obras del estado es una acción importante para promover la transparencia, la rendición de cuentas y el buen gobierno</p>
+                    <a href="reporte.php" class="btn btn-light btn-xl js-scroll-trigger" style="background-color: #FF0000; color: white;"> QUIERO REPORTAR <span class="glyphicon glyphicon-triangle-right"></span></a>
                 </div>
             </div>
 
@@ -475,7 +472,7 @@
                         <h5 style="font-size: 15px" >${obra.entidad || 'Entidad no disponible'}</h5>
                         <h5 style="font-size: 14px" >Costo: S/. ${obra.licitacion_val || 'Entidad no disponible'}</h5>
                         <p style="font-size: 12px;"><strong>Descripcion: </strong>${obra.descripcion || 'Descripcion no disponible'}</p>
-                        <a class="btn btn-primary btn-xl js-scroll-trigger" style="background-color: #FF0000; color: white;" href="contacto.php">Ver detalle</a>
+                        <a class="btn btn-primary btn-xl js-scroll-trigger" style="background-color: #FF0000; color: white;" href="detalle.php?id_obra=${obra.id_obra}&nombre_obra=${obra.descripcion}">Ver detalle</a>
                         <br>
                         <br>
                     </div>
@@ -496,7 +493,7 @@
             .then(response => response.json())
             .then(data => {
                 console.log(data);
-                mostrarDatosEnHTML(data.results.slice(0, 4));
+                mostrarDatosEnHTML(data.results.slice(0, 3));
             })
             .catch(error => console.error('Error al obtener datos:', error));
 
@@ -526,11 +523,11 @@
               var obraDiv = document.createElement('div');
               obraDiv.innerHTML = `
                   <div class="columna">
-                    <div class="caja-overflow" style="padding: 10px; height: 400px;">
+                    <div class="caja-overflow" style="padding: 0px; height: 400px;">
                         <h5 style="font-size: 15px" >${obra.entidad || 'Entidad no disponible'}</h5>
                         <p style="font-size: 12px;"><strong>Descripcion: </strong>${obra.descripcion || 'Descripcion no disponible'}</p>
                         <p style="font-size: 12px;"><strong>Porcentaje Satisfacción: </strong>${obra.porc_satis_obra || 'Descripcion no disponible'}</p>
-                        <canvas id="chart-${obra.id_obra}" style="max-height: 300px;"></canvas>
+                        <canvas id="chart-${obra.id_obra}" style="height: 50px; width: 50px;></canvas>
                         <a class="btn btn-primary btn-xl js-scroll-trigger" style="background-color: #FF0000; color: white;" href="">Ver detalle</a>
                         <br>
                         <br>
@@ -540,7 +537,7 @@
               resultadosDiv.appendChild(obraDiv);
 
               // Llama a la función para dibujar el gráfico
-              dibujarGrafico(obra.id_obra, obra.porc_satis_obra);
+              dibujarGrafico(obra.id_obra, obra.porc_satis_obra, obra);
           }
 
           function dibujarGrafico(idCanvas, porcentajeSatisfaccion, obra) {
