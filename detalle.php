@@ -170,7 +170,7 @@
           var obraDiv = document.createElement('div');
 
           obraDiv.innerHTML = `
-              <h1 class="font-weight-bold">Obra: ${nombreObra|| 'Entidad no disponible'}</h1><br>
+              <h3 class="font-weight-bold">Obra: ${nombreObra|| 'Entidad no disponible'}</h3><br>
             
               <div class="mbr-footer-content " style="height: 150px; padding-top: 50px">
                       <p><strong>¿Cuál es la finalidad de la obra?</strong>
@@ -208,7 +208,7 @@
               
               <br><br>
               <form action="enviar_mensaje.php" method="post" enctype="multipart/form-data">
-              
+
               <!-- Asunto input -->
               <div class="form-group">
                 <label for="formObservacion">Ingrese sus dudas sobre la obra</label>
